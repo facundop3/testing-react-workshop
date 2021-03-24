@@ -12,8 +12,6 @@ describe("userEvent", () => {
     const increment = screen.getByRole("button", { name: /increment/i });
     const decrement = screen.getByRole("button", { name: /decrement/i });
     expect(counter).toHaveTextContent("Counter: 0");
-    // `userEvent` provides more advanced simulation of browser interactions
-    // 📚: https://testing-library.com/docs/ecosystem-user-event/
     // Let's use `userEvent.click` to fire some clicks and check the counter 🔥🖱
     userEvent.click(increment);
     // screen.debug();

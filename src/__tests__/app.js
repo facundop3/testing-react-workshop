@@ -6,7 +6,7 @@ import {
 import userEvent from "@testing-library/user-event";
 import { rest } from "msw";
 import { setupServer } from "msw/node";
-import App, { Form } from "../App";
+import App from "../App";
 
 const server = setupServer();
 const rickAndMortyApi = `https://rickandmortyapi.com/api/character/1`;
