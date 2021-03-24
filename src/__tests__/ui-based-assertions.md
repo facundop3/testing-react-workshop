@@ -10,11 +10,10 @@
 
 
 #### Ok let's go:
-    Let's say we need to test the App component renders properly, we can just call `render` method from `@testing-library/react`.
+   Let's say we need to test the App component renders properly, we can just call `render` method from `@testing-library/react`.
+   After rendering our component, we need to validate that the UI is okay by doing some assertions, let's say `<App/>`has a counter and we need to verify that's starting at 0.
 
-    After rendering our component, we need to validate that the UI is okay by doing some assertions, let's say `<App/>`has a counter and we need to verify that's starting at 0.
-
-    That's when `screen` joins the party, `screen` provide us with a bunch of methods for UI validations, the first one I would like to highlight is :`screen.debug()` It prints a representation of the rendered component on the terminal, so we can start thinking on what do we need to validate. 
+   That's when `screen` joins the party, `screen` provide us with a bunch of methods for UI validations, the first one I would like to highlight is :`screen.debug()` It prints a representation of the rendered component on the terminal, so we can start thinking on what do we need to validate. 
 
   ```js
     import { render, screen } from "@testing-library/react";
@@ -25,7 +24,7 @@
         screen.debug()
     })
    ```
-    screen.debug() output:
+   `screen.debug()` output:
    ```html 
      <body>
         <div>
@@ -98,7 +97,7 @@
       </body>
    ```
 
-    Ok, we render the component, we check how the component looks on the terminal, and now we are ready to start the validation:
+   Ok, we render the component, we check how the component looks on the terminal, and now we are ready to start the validation:
   ```js
       import { render, screen } from "@testing-library/react";
       import App from "../App";
@@ -114,5 +113,5 @@
           */
          expect(counter).toHaveTextContent("Counter: 0");
       })
-    ``` 
+  ```
 # [Back]([Start here](https://github.com/facundop3/testing-react-workshop/blob/main/src/__tests__/jest-elevator-picht.md) [Next](https://github.com/facundop3/testing-react-workshop/blob/main/src/__tests__/userEvent.md)
