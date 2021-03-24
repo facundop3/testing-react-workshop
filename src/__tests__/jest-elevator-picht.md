@@ -23,4 +23,4 @@ test('adds 1 + 2 to equal 3', () => {
 
 Pretty self explanatory, right ?
 
-# [Back](https://github.com/facundop3/testing-react-workshop/blob/main/README.md) [Next](https://github.com/facundop3/testing-react-workshop/blob/main/src/__tests__/ui-based-assertions.md)
+# [⬅️ Back](https://github.com/facundop3/testing-react-workshop/blob/main/README.md) - [Next ➡️](https://github.com/facundop3/testing-react-workshop/blob/main/src/__tests__/ui-based-assertions.md)
