@@ -114,4 +114,4 @@
          expect(counter).toHaveTextContent("Counter: 0");
       })
   ```
-# [Back]([Start here](https://github.com/facundop3/testing-react-workshop/blob/main/src/__tests__/jest-elevator-picht.md) [Next](https://github.com/facundop3/testing-react-workshop/blob/main/src/__tests__/userEvent.md)
+# [⬅️ Back](https://github.com/facundop3/testing-react-workshop/blob/main/src/__tests__/jest-elevator-picht.md) - [Next ➡️](https://github.com/facundop3/testing-react-workshop/blob/main/src/__tests__/userEvent.md)
