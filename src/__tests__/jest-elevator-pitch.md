@@ -1,4 +1,4 @@
-# [Jest](https://jestjs.io) elevator pich 🃏
+# [Jest](https://jestjs.io) elevator pitch 🃏
 
 Let's get started with a really really basic Jest intro, jest is a powerful open-source javascript testing framework.
 
@@ -23,5 +23,5 @@ test('adds 1 + 2 to equal 3', () => {
 
 Pretty self explanatory, right ?
 
-# [⬅️ Back](README.md) - [Next ➡️](ui-based-assertions.md)
+# [⬅️ Back](/README.md) - [Next ➡️](ui-based-assertions.md)
 

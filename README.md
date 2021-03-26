@@ -6,4 +6,4 @@ Some instructions:
   - Keep the focus on the `src/__test__/` directory, thats the main purpose of this.
   - Each `.js` file on the `src/__test__/` will have a same named `.md` with some additional info.
 
- ## [Start ➡️](https://github.com/facundop3/testing-react-workshop/blob/main/src/__tests__/jest-elevator-picht.md)
+ ## [Start ➡️](/src/__tests__/jest-elevator-pitch.md)
