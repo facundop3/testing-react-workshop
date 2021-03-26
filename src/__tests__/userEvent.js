@@ -25,14 +25,7 @@ describe("userEvent", () => {
       user: "fpetre@vairix.com",
       password: ":party-parrot:",
     };
-
-    let submittedUser;
     const handleSubmit = jest.fn();
-    // mockImplementation allows us to define the implementation of a jest function
-    handleSubmit.mockImplementation((user) => {
-      // here we save the user data to `submittedUser`
-      submittedUser = user;
-    });
     render(<Form handleSubmit={handleSubmit} />);
     const userInput = screen.getByLabelText(/user/i);
     const passwordInput = screen.getByLabelText(/password/i);
@@ -41,7 +34,7 @@ describe("userEvent", () => {
     userEvent.type(userInput, randomUser.user);
     userEvent.type(passwordInput, randomUser.password);
     userEvent.click(sendBtn);
-    expect(submittedUser).toEqual(randomUser);
+    expect(handleSubmit).toHaveBeenCalledWith(randomUser);
     expect(handleSubmit).toHaveBeenCalledTimes(1);
   });
 });

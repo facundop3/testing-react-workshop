@@ -114,4 +114,4 @@
          expect(counter).toHaveTextContent("Counter: 0");
       })
   ```
-# [⬅️ Back](jest-elevator-picht.md) - [Next ➡️](userEvent.md)
+# [⬅️ Back](jest-elevator-pitch.md) - [Next ➡️](userEvent.md)

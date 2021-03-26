@@ -14,6 +14,7 @@ const rickAndMortyApi = `https://rickandmortyapi.com/api/character/1`;
 beforeAll(() => {
   server.listen();
 });
+
 afterEach(() => {
   /*
     When mocking http request, 

@@ -32,5 +32,44 @@ Ex: Let's say we need to test a counter with increment and decrement buttons...
     })
   ```
  
- ## Jest Mocking functions
-  We'll need an intro into this topic before jumping into simulating keyboard typing, so:
+## Jest Mocking functions
+We'll need an intro into this topic before jumping into simulating keyboard typing.
+Basically is a function with that allows us to expect a bunch of different things like
+the parameters the function was called width and the times the function was called. 
+📚: Reed more on the [Jest docs](https://jestjs.io/docs/mock-functions)
+The syntax to declare a jest mock function is: 
+```js
+  const mockFunction = jest.fn()
+```
+We'll be using it in the next topic
+
+## Simulate Typing ⌨️
+
+To simulate a user typing, we'll need to call `userEvent.type` with a screen getter of the element we'd like to write in and, as it's second parameter, the text we need to type.
+Ex: Let's say we have a login form, and we need to validate that the `handleSubmit` function is being called with the user data we just typed. 
+
+ ```js
+    import { render, screen } from "@testing-library/react";
+    import userEvent from "@testing-library/user-event";
+    import { Form } from "../App";
+
+  test("Simulate keyboard typing with `userEvent`🎹", () => {
+    const randomUser = {
+      user: "fpetre@vairix.com",
+      password: ":party-parrot:",
+    };
+    const handleSubmit = jest.fn()
+    render(<Form handleSubmit={handleSubmit} />);
+    const userInput = screen.getByLabelText(/user/i);
+    const passwordInput = screen.getByLabelText(/password/i);
+    const sendBtn = screen.getByRole("button", { name: /send/i });
+    // // Now we'll use `userEvent.type` to fill the above inputs
+    userEvent.type(userInput, randomUser.user);
+    userEvent.type(passwordInput, randomUser.password);
+    userEvent.click(sendBtn);
+    expect(handleSubmit).toHaveBeenCalledWith(randomUser);
+    expect(handleSubmit).toHaveBeenCalledTimes(1);
+  });
+  ```
+
+  # [⬅️ Back](ui-based-assertions.md) - [Next ➡️](http-mocking-with-msw.md)
