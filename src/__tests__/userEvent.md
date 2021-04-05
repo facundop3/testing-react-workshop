@@ -72,4 +72,4 @@ Ex: Let's say we have a login form, and we need to validate that the `handleSubm
   });
   ```
 
-  # [⬅️ Back](ui-based-assertions.md) - [Next ➡️](http-mocking-with-msw.md)
+  # [⬅️ Back](ui-based-assertions.md) - [Next ➡️](dealing-with-providers.md)

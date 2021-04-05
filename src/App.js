@@ -3,12 +3,8 @@ import axios from "axios";
 import logo from "./logo.svg";
 import "./App.css";
 
-const useCounter = () => {
-  const [count, setCount] = useState(0);
-  const increment = () => setCount((prev) => prev + 1);
-  const decrement = () => setCount((prev) => prev - 1);
-  return { count, increment, decrement };
-};
+import ContextApiCounter from "./context-api/ContextApiCounter";
+import ContextApiCounterProvider from "./context-api/ContextApiCounterProvider";
 
 export const Form = ({ handleSubmit }) => {
   const submitHandler = (ev) => {
@@ -42,7 +38,6 @@ export const Form = ({ handleSubmit }) => {
 };
 
 function App() {
-  const { count, increment, decrement } = useCounter();
   const [{ name, species, status }, setRick] = useState({});
   const [isRickLoading, setIsRickLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -77,9 +72,9 @@ function App() {
         >
           Learn React
         </a>
-        <div>Counter: {count}</div>
-        <button onClick={increment}>increment</button>
-        <button onClick={decrement}>decrement</button>
+        <ContextApiCounterProvider>
+          <ContextApiCounter />
+        </ContextApiCounterProvider>
         <button onClick={getRick}>Get Rick</button>
         <Form handleSubmit={handleSubmit} />
         {isRickLoading ? (
