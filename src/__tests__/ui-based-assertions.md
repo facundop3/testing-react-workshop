@@ -6,7 +6,7 @@
 #### Testing Tips for our automated tests:
   - Don't focus on the implementation details of what you're testing. 
   - Try to keep the automated testing as close as possible to the way the user will interact with our components.
-  - Think how would you test your app if you are a manual tester.
+  - Think how you would test your app if you were a manual tester.
 
 
 #### Ok let's go:
