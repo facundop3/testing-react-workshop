@@ -1,5 +1,5 @@
 ## HTTP mocking with MSW
-Sometimes we need to test how our components integrates with external APIS. 
+Sometimes we need to test how our components integrate with external APIS. 
 Luckily we have MSW a full set of API mocking tools that intersects requests on the network level. 
 We'll be covering just a few of them, specifically `rest` and `setupServer`.
 Tou can have a look on MSW 📚: https://mswjs.io/
