@@ -41,11 +41,11 @@ describe("Mocking HTTP calls with MSW", () => {
         // ctx provide us with some useful methods
         // 📚: https://mswjs.io/docs/api/context
         // return is required
-        return res(ctx.json(mockResponse));
+        return res(ctx.delay(500), ctx.json(mockResponse));
       })
     );
     render(<App />);
-    userEvent.click(screen.getByRole("button", { name: /get rick/i }));
+    await userEvent.click(screen.getByRole("button", { name: /get rick/i }));
     await waitForElementToBeRemoved(() => screen.getByText(/loading/i));
     expect(screen.getByText(/name/i)).toHaveTextContent(mockResponse.name);
     expect(screen.getByText(/status/i)).toHaveTextContent(mockResponse.status);
@@ -58,11 +58,11 @@ describe("Mocking HTTP calls with MSW", () => {
     const message = `R.I.P 🪦`;
     server.use(
       rest.get(rickAndMortyApi, (req, res, ctx) => {
-        return res(ctx.delay(1000), ctx.status(500), ctx.json({ message }));
+        return res(ctx.delay(500), ctx.status(500), ctx.json({ message }));
       })
     );
     render(<App />);
-    userEvent.click(screen.getByRole("button", { name: /get rick/i }));
+    await userEvent.click(screen.getByRole("button", { name: /get rick/i }));
     await waitForElementToBeRemoved(() => screen.getByText(/loading/i), {
       timeout: 2000,
     });

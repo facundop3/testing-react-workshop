@@ -3,7 +3,7 @@ import userEvent from "@testing-library/user-event";
 import App, { Form } from "../App";
 
 describe("userEvent", () => {
-  test("Simulate click with `userEvent` 🔥🖱", () => {
+  test("Simulate click with `userEvent` 🔥🖱", async () => {
     render(<App />);
     const counter = screen.getByText(/counter/i);
     // `screen.getByRole` takes string with the role of the element we are querying,
@@ -13,14 +13,14 @@ describe("userEvent", () => {
     const decrement = screen.getByRole("button", { name: /decrement/i });
     expect(counter).toHaveTextContent("Counter: 0");
     // Let's use `userEvent.click` to fire some clicks and check the counter 🔥🖱
-    userEvent.click(increment);
+    await userEvent.click(increment);
     // screen.debug();
     expect(counter).toHaveTextContent("Counter: 1");
-    userEvent.click(decrement);
+    await userEvent.click(decrement);
     expect(counter).toHaveTextContent("Counter: 0");
   });
 
-  test("Simulate keyboard typing with `userEvent`🎹", () => {
+  test("Simulate keyboard typing with `userEvent`🎹", async () => {
     const randomUser = {
       user: "fpetre@vairix.com",
       password: ":party-parrot:",
@@ -31,9 +31,9 @@ describe("userEvent", () => {
     const passwordInput = screen.getByLabelText(/password/i);
     const sendBtn = screen.getByRole("button", { name: /send/i });
     // // Now we'll use `userEvent.type` to fill the above inputs
-    userEvent.type(userInput, randomUser.user);
-    userEvent.type(passwordInput, randomUser.password);
-    userEvent.click(sendBtn);
+    await userEvent.type(userInput, randomUser.user);
+    await userEvent.type(passwordInput, randomUser.password);
+    await userEvent.click(sendBtn);
     expect(handleSubmit).toHaveBeenCalledWith(randomUser);
     expect(handleSubmit).toHaveBeenCalledTimes(1);
   });
